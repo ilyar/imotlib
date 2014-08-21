@@ -1,0 +1,19 @@
+{
+    "name": "ilyar/imotlib",
+    "description": "test issue",
+    "authors": [
+        {
+            "name": "Iiya Rogov",
+            "email": "ilyar.software@gmail.com"
+        }
+    ],
+    "config": {
+        "vendor-dir": "protected/vendor"
+    },
+    "require": {
+        "yiisoft/yii": "1.1.15"
+    },
+    "require-dev": {
+
+    }
+}
