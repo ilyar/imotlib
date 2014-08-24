@@ -56,7 +56,7 @@ $script = <<SCRIPT
 
     # Allow root access from any host
     sed -i "s/bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" /etc/mysql/my.cnf
-    echo "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'root' WITH GRANT OPTION" | mysql -u root --password=lamp
+    echo "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'lamp' WITH GRANT OPTION" | mysql -u root --password=lamp
     echo "GRANT PROXY ON ''@'' TO 'root'@'%' WITH GRANT OPTION" | mysql -u root --password=lamp
 
     # Install phpmyadmin
@@ -78,6 +78,11 @@ $script = <<SCRIPT
 
     # Configure VM user
     adduser vagrant www-data
+
+    # Setup App
+    cd /vagrant && sudo -u vagrant -H composer install
+    cat /vagrant/protected/data/db.sql | mysql -u root --password=lamp
+    sudo -u vagrant -H /vagrant/protected/yiic migrate --interactive=0
 
 SCRIPT
 

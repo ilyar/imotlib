@@ -1,12 +1,4 @@
-# Vagrant LAMP
-
-Want to test a new web app but don't want to affect your current Apache / MySQL / PHP system?
-Applications like MAMP are great, but they don't make it easy to maintain multiple, separate
-web roots.
-
-If you find yourself needing quick to configure web stack, but also one that is customizable try this Vagrant project
-
-Vagrant allows for Virtual Machines to be quickly setup, and easy to use.
+# imotlib
 
 And this project aims to make it very easy to spinup a complete LAMP stack in a matter of minutes.
 
@@ -22,23 +14,15 @@ Simply copy the file `vagrantfile` to an existing project.
 
 ### Startup
 
-	$ git clone http://www.github.com/mattandersen/vagrant-lamp lamp
-	$ cd lamp
-	$ rm -fr .git
-	$ edit vagrantfile # change project_name and ip_address
+	$ git clone https://github.com/ilyar/imotlib.git
+	$ cd imotlib
 	$ vagrant up
 
-That is pretty simple.
-
-### Connecting
-
-#### Apache
-
-The Apache server is available at <http://lamp.local/>
+The project is available at <http://imotlib.local/>
 
 #### MySQL
 
-Externally the MySQL server is available at `lamp.local:3306`, and when running on the VM it is available as a socket or at port 3306 as usual.
+Externally the MySQL server is available at `imotlib.local:3306`, and when running on the VM it is available as a socket or at port 3306 as usual.
 Username: root
 Password: lamp
 
@@ -67,7 +51,7 @@ And like any other vagrant file you have SSH access with:
 
 ```ruby
 ip_address = "10.10.10.10"
-project_name = "lamp" # http://lamp.local
+project_name = "imotlib" # from project name folder
 ```
 
 ### Environment variables
