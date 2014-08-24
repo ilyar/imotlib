@@ -81,7 +81,7 @@ $script = <<SCRIPT
 
     # Setup App
     cd /vagrant && sudo -u vagrant -H composer install
-    cat /vagrant/protected/data/db.sql | mysql -u root --password=lamp
+    cat /vagrant/protected/data/db.ddl | mysql -u root --password=lamp
     sudo -u vagrant -H /vagrant/protected/yiic migrate --interactive=0
 
 SCRIPT
