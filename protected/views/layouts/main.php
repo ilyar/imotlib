@@ -21,23 +21,27 @@
     <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
+<!-- page -->
 <body>
-
 <div class="container" id="page">
 
+    <!-- header -->
     <div id="header">
         <div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
     </div>
-    <!-- header -->
 
+    <!-- mainmenu -->
     <div id="mainmenu">
         <?php $this->widget(
             'zii.widgets.CMenu',
             array(
                 'items' => array(
-                    array('label' => 'Home', 'url' => array('/site/index')),
-                    array('label' => 'About', 'url' => array('/site/page', 'view' => 'about')),
-                    array('label' => 'Contact', 'url' => array('/site/contact')),
+                    array('label' => 'Books', 'url' => array('/book/index')),
+                    array('label' => 'Authors', 'url' => array('/author/index')),
+                    array('label' => 'Customer', 'url' => array('/customer/index')),
+                    array('label' => 'Report book', 'url' => array('/book/report')),
+                    array('label' => 'Random books', 'url' => array('/book/report&mode=random&limit=5')),
+                    array('label' => 'Report author', 'url' => array('/author/report')),
                     array('label' => 'Login', 'url' => array('/site/login'), 'visible' => Yii::app()->user->isGuest),
                     array(
                         'label' => 'Logout (' . Yii::app()->user->name . ')',
@@ -48,29 +52,22 @@
             )
         ); ?>
     </div>
-    <!-- mainmenu -->
-    <?php if (isset($this->breadcrumbs)): ?>
-        <?php $this->widget(
+
+    <!-- breadcrumbs -->
+    <?php if (isset($this->breadcrumbs)) {
+        $this->widget(
             'zii.widgets.CBreadcrumbs',
-            array(
-                'links' => $this->breadcrumbs,
-            )
-        ); ?><!-- breadcrumbs -->
-    <?php endif ?>
+            array('links' => $this->breadcrumbs)
+        );
+    } ?>
 
+    <!-- content -->
     <?php echo $content; ?>
-
     <div class="clear"></div>
 
-    <div id="footer">
-        Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
-        All Rights Reserved.<br/>
-        <?php echo Yii::powered(); ?>
-    </div>
     <!-- footer -->
+    <div id="footer"></div>
 
 </div>
-<!-- page -->
-
 </body>
 </html>
