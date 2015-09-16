@@ -26,9 +26,16 @@
     ],
     "require": {
         "php":">=5.3.0",
-        "yiisoft/yii": "1.1.*"
+        "crisu83/yiistrap": "2.*",
+        "2amigos/yiiwheels": "2.*",
+        "yiisoft/yii": "1.1.14-rc"
     },
     "require-dev": {
 
+    },
+  "autoload": {
+    "psr-0": {
+      "config": "./"
     }
+  }
 }

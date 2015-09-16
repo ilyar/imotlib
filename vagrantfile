@@ -75,6 +75,7 @@ $script = <<SCRIPT
 
     # Install composer
     curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer
+    curl -sS https://getcomposer.org/installer | php && mv composer.phar ~/bin/composer
 
     # Configure VM user
     adduser vagrant www-data
